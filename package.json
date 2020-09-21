@@ -5,10 +5,18 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "backend": "node server/index"
   },
   "dependencies": {
+    "@cometchat-pro/chat": "^2.0.12",
+    "axios": "^0.19.2",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
     "core-js": "^3.6.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "sqlite3": "^5.0.0",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0"
   },

@@ -1,14 +1,36 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
+<script>
+import { CometChat } from "@cometchat-pro/chat";
+export default {
+  data() {
+    return {
+      user: null,
+    };
+  },
+  created() {
+    this.getLoggedInUser();
+  },
+  methods: {
+    getLoggedInUser() {
+      CometChat.getLoggedinUser().then((user) => {
+        if (user !== null) {
+          this.$router.push({
+            name: "chat",
+          });
+        }
+      });
+    },
+  },
+};
+</script>
+
 <style>
+@import "./lib/cometchat-components/assets/css/style.css";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
